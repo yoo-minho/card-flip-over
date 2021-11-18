@@ -1,3 +1,20 @@
+body {
+    margin: 0;
+}
+
+.wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100vh;
+    place-content: center;
+}
+
+.center-space {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 15px auto;
+}
+
 .card {
     display: inline-block;
     width: 70px;
