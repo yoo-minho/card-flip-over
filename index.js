@@ -43,22 +43,30 @@ function cardSetting(x, y) {
         document.querySelector(".center-space").appendChild(card);
 
         //클릭하여 카드 뒤집기
+
+        let prevColor, currentColor;
+
         card.addEventListener('click', function () {
 
-            if (card.classList.contains("completed")) return;
+            if (!card.classList.contains("wait")) return;
+            if (card.classList.contains("flipped")) return;
 
-            card.classList.toggle('flipped');
-            card.classList.toggle('on');
+            card.classList.add('flipped');
+            currentColor = card.querySelector(".card-back").dataset.color;
+
+            if(prevColor === currentColor){
+                document.querySelectorAll('flipped').forEach(el => el.classList.remove('wait'));
+            }
+
+
+
 
             const onEl = document.querySelectorAll(".on");
 
-            if (onEl.length === 0) {
+            if (onEl.length === 2) {
                 return;
             }
 
-            if (onEl.length > 1) {
-                return;
-            }
 
             if (card.classList.contains("flipped")) {
                 card.classList.add('on');
@@ -66,12 +74,14 @@ function cardSetting(x, y) {
                 card.classList.remove('on');
             }
 
+            firstColor = onEl[0].querySelector(".card-back").dataset.color;
+
             const oneColor = onEl[0].querySelector(".card-back").dataset.color
             const twoColor = card.querySelector(".card-back").dataset.color
 
             if (oneColor === twoColor) {
-                onEl[0].classList.add('completed');
-                card.classList.add('completed');
+                onEl[0].classList.remove('wait');
+                card.classList.remove('wait');
                 return;
             }
 
