@@ -1,3 +1,5 @@
+import Clock from './clock.js'
+
 const config = {
     x: 3,
     y: 4,
@@ -13,6 +15,10 @@ const config = {
 
 document.addEventListener("DOMContentLoaded", () => {
     cardSetting(config.x, config.y);
+    var i=0,clocks = document.querySelectorAll('.clock'),l=clocks.length;
+    for (;i<l;i++) {
+        new Clock(clocks[i]);
+    }
 });
 
 function getRandomColorArray() {
