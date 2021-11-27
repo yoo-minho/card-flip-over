@@ -15,8 +15,10 @@ const config = {
 
 document.addEventListener("DOMContentLoaded", () => {
     cardSetting(config.x, config.y);
-    var i=0,clocks = document.querySelectorAll('.clock'),l=clocks.length;
-    for (;i<l;i++) {
+    var i = 0,
+        clocks = document.querySelectorAll('.clock'),
+        l = clocks.length;
+    for (; i < l; i++) {
         new Clock(clocks[i]);
     }
 });
@@ -76,6 +78,7 @@ function cardSetting(x, y) {
 
         card.addEventListener('click', function () {
 
+            if (document.querySelector('.clock').dataset.second === '0') return alert('미션 종료!');
             if (timer) return;
             if (!card.classList.contains("wait")) return;
             if (card.classList.contains("flipped")) return;
@@ -92,7 +95,7 @@ function cardSetting(x, y) {
                 prevCard = null;
                 if (isDone()) {
                     setTimeout(() => {
-                        alert('Complete!');
+                        alert('미션 완료!');
                     }, 1000)
                 }
                 return;

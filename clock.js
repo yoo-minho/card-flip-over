@@ -1,10 +1,9 @@
 export default (function () {
-
     var exports = function (element) {
         this._element = element;
         var html = '';
         for (var i = 0; i < 8; i++) {
-            if(i === 2 || i === 5){
+            if (i === 2 || i === 5) {
                 html += ':';
             } else {
                 html += '<span>&nbsp;</span>';
@@ -15,21 +14,23 @@ export default (function () {
         this._tick();
     };
 
+    let timeAttackSecond = 30;
+
     exports.prototype = {
 
         _tick: function () {
-            var time = new Date();
-            this._update(this._pad(time.getHours()) + this._pad(time.getMinutes()) + this._pad(time.getSeconds()));
+            this._update(this._pad(0) + this._pad(0) + this._pad(timeAttackSecond));
+            this._element.dataset.second = String(timeAttackSecond);
+            timeAttackSecond--;
+            if (timeAttackSecond < 0) return;
             var self = this;
             setTimeout(function () {
                 self._tick();
             }, 1000);
         },
-
         _pad: function (value) {
             return ('0' + value).slice(-2);
         },
-
         _update: function (timeString) {
 
             var i = 0, l = this._slots.length, value, slot, now;
@@ -52,7 +53,6 @@ export default (function () {
         },
 
         _flip: function (slot, value) {
-
             // setup new state
             slot.classList.remove('flip');
             slot.dataset.old = slot.dataset.now;
@@ -63,10 +63,7 @@ export default (function () {
 
             // start flippin
             slot.classList.add('flip');
-
         }
-
     };
-
     return exports;
 }());
