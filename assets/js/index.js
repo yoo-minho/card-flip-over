@@ -121,6 +121,6 @@ function cardSetting(x, y) {
     timer = setTimeout(() => {
         document.querySelectorAll('.card').forEach(el => el.classList.remove('flipped'))
         timer = null;
-    }, 1000)
+    }, 1500)
 }
 

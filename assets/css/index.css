@@ -6,8 +6,9 @@ body {
 .wrap {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
-    height: 100vh;
+    height: calc(100vh - 100px);
     place-content: center;
+    margin: 50px 0;
 }
 
 .header-space {
@@ -24,7 +25,7 @@ body {
 .center-space {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 32px;
+    grid-gap: 24px;
     margin: 15px auto;
 }
 
