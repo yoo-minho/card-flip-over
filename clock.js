@@ -1,10 +1,14 @@
-export default (function(){
+export default (function () {
 
-    var exports = function(element) {
+    var exports = function (element) {
         this._element = element;
         var html = '';
-        for (var i=0;i<6;i++) {
-            html += '<span>&nbsp;</span>';
+        for (var i = 0; i < 8; i++) {
+            if(i === 2 || i === 5){
+                html += ':';
+            } else {
+                html += '<span>&nbsp;</span>';
+            }
         }
         this._element.innerHTML = html;
         this._slots = this._element.getElementsByTagName('span');
@@ -13,23 +17,23 @@ export default (function(){
 
     exports.prototype = {
 
-        _tick:function() {
+        _tick: function () {
             var time = new Date();
             this._update(this._pad(time.getHours()) + this._pad(time.getMinutes()) + this._pad(time.getSeconds()));
             var self = this;
-            setTimeout(function(){
+            setTimeout(function () {
                 self._tick();
-            },1000);
+            }, 1000);
         },
 
-        _pad:function(value) {
+        _pad: function (value) {
             return ('0' + value).slice(-2);
         },
 
-        _update:function(timeString) {
+        _update: function (timeString) {
 
-            var i=0,l=this._slots.length,value,slot,now;
-            for (;i<l;i++) {
+            var i = 0, l = this._slots.length, value, slot, now;
+            for (; i < l; i++) {
 
                 value = timeString.charAt(i);
                 slot = this._slots[i];
@@ -42,12 +46,12 @@ export default (function(){
                 }
 
                 if (now !== value) {
-                    this._flip(slot,value);
+                    this._flip(slot, value);
                 }
             }
         },
 
-        _flip:function(slot,value) {
+        _flip: function (slot, value) {
 
             // setup new state
             slot.classList.remove('flip');
