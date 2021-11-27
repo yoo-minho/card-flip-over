@@ -23,10 +23,10 @@ h2 {
     margin:0 .06125em;
     z-index:1;
 
-    -webkit-transform:perspective(750);
-    -moz-transform:perspective(750);
-    -ms-transform:perspective(750);
-    transform:perspective(750);
+    -webkit-transform:perspective(750px);
+    -moz-transform:perspective(750px);
+    -ms-transform:perspective(750px);
+    transform:perspective(750px);
 
     -webkit-transform-style:preserve-3d;
     -moz-transform-style:preserve-3d;
