@@ -11,9 +11,11 @@ body {
     margin: 50px 0;
 }
 
-.header-space {
-    display: table;
-    vertical-align: middle;
+.header-space,
+.footer-space {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contents-space {
@@ -108,14 +110,7 @@ body {
     text-align: -webkit-center;
 }
 
-.footer-space {
-    display: table;
-}
-
 .footer-banner {
-    display: table-cell;
-    vertical-align: middle;
-
     text-align: center;
     text-align: -webkit-center;
 }
