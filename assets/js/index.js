@@ -1,4 +1,4 @@
-import Clock from './clock.js'
+import Clock from './lib/clock.js'
 
 const config = {
     x: 3,
@@ -78,7 +78,12 @@ function cardSetting(x, y) {
 
         card.addEventListener('click', function () {
 
-            if (document.querySelector('.clock').dataset.second === '0') return alert('미션 종료!');
+            if (document.querySelector('.clock').dataset.second === '0') {
+                if(confirm('Mission Finished!')){
+                    location.reload();
+                }
+                return;
+            }
             if (timer) return;
             if (!card.classList.contains("wait")) return;
             if (card.classList.contains("flipped")) return;
@@ -95,7 +100,7 @@ function cardSetting(x, y) {
                 prevCard = null;
                 if (isDone()) {
                     setTimeout(() => {
-                        alert('미션 완료!');
+                        alert('Mission Complete!');
                     }, 1000)
                 }
                 return;

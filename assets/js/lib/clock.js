@@ -2,8 +2,8 @@ export default (function () {
     var exports = function (element) {
         this._element = element;
         var html = '';
-        for (var i = 0; i < 8; i++) {
-            if (i === 2 || i === 5) {
+        for (var i = 0; i < 5; i++) {
+            if (i === 2) {
                 html += ':';
             } else {
                 html += '<span>&nbsp;</span>';
@@ -19,7 +19,7 @@ export default (function () {
     exports.prototype = {
 
         _tick: function () {
-            this._update(this._pad(0) + this._pad(0) + this._pad(timeAttackSecond));
+            this._update(this._pad(0) + this._pad(timeAttackSecond));
             this._element.dataset.second = String(timeAttackSecond);
             timeAttackSecond--;
             if (timeAttackSecond < 0) return;

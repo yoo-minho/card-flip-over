@@ -12,6 +12,7 @@ body {
 
 .header-space {
     display: table;
+    vertical-align: middle;
 }
 
 .contents-space {
@@ -78,4 +79,24 @@ body {
     text-align: center;
     display: table-cell;
     vertical-align: middle;
+}
+
+.footer-space {
+    display: table;
+}
+
+.footer-banner {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.footer-banner p {
+    margin: 0;
+}
+
+.footer-banner img {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
 }
