@@ -1,0 +1,22 @@
+{
+  "name": "card-flip-over",
+  "version": "1.0.0",
+  "description": "s",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -p 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoo-minho/card-flip-over.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yoo-minho/card-flip-over/issues"
+  },
+  "homepage": "https://github.com/yoo-minho/card-flip-over#readme",
+  "dependencies": {
+    "http-server": "^14.0.0"
+  }
+}
