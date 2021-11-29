@@ -7,9 +7,9 @@ const config = {
         {color: '#FFC312', text: '채팅'},
         {color: '#C4E538', text: '올인원'},
         {color: '#12CBC4', text: '협업'},
-        {color: '#ED4C67', text: '프로젝트'},
+        {color: '#8F8F8F', text: '프로젝트'},
         {color: '#FDA7DF', text: '업무'},
-        {color: '#FDA7DF', text: '워크'},
+        {color: '#3EBB94', text: '워크'},
     ]
 }
 
