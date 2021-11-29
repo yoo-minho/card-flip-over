@@ -9,7 +9,7 @@ const config = {
         {color: '#12CBC4', text: '협업'},
         {color: '#ED4C67', text: '프로젝트'},
         {color: '#FDA7DF', text: '업무'},
-        {color: '#833471', text: '워크'},
+        {color: '#FDA7DF', text: '워크'},
     ]
 }
 
